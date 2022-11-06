@@ -5,3 +5,6 @@ api-version: 1.19
 authors: [ Aroze ]
 description: um
 website: aroze.me
+commands:
+  gamemode:
+    aliases: [ gm, gms, gmc, gma, gmsp, gmspec, gm0, gm1, gm2, gm3 ]
