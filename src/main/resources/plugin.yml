@@ -1,0 +1,7 @@
+name: UwUCore
+version: '${project.version}'
+main: me.aroze.uwucore.UwUCore
+api-version: 1.19
+authors: [ Aroze ]
+description: um
+website: aroze.me
