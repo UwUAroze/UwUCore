@@ -1,17 +1,13 @@
-package me.aroze.uwucore;
+package me.aroze.uwucore
 
-import org.bukkit.plugin.java.JavaPlugin;
+import org.bukkit.plugin.java.JavaPlugin
 
-public final class UwUCore extends JavaPlugin {
-
-    @Override
-    public void onEnable() {
+class UwUCore : JavaPlugin() {
+    override fun onEnable() {
         // Plugin startup logic
-
     }
 
-    @Override
-    public void onDisable() {
+    override fun onDisable() {
         // Plugin shutdown logic
     }
 }
