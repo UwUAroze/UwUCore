@@ -17,3 +17,7 @@ fun String.coloured(): String {
     }
     return ChatColor.translateAlternateColorCodes('&', coloured)
 }
+
+fun String.undress(): String {
+    return ChatColor.stripColor(this)
+}
