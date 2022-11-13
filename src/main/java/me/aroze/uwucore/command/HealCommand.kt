@@ -21,8 +21,9 @@ object HealCommand : CommandExecutor{
         val soft = if (label.contains("s")) " soft" else ""
 
         if (player !== sender) {
+            val healer = if (sender is Player) sender.name else "a weirdo in console"
             sender.sendMessage("&#ffd4e3You've$soft healed &#eb9bb7${player.name}&#ffd4e3, aww.".coloured())
-            player.sendMessage("&#ffd4e3You've been$soft healed by &#eb9bb7${sender.name}&#ffd4e3, how cute ;3".coloured())
+            player.sendMessage("&#ffd4e3You've been$soft healed by &#eb9bb7${healer}&#ffd4e3, how cute ;3".coloured())
         } else player.sendMessage("&#ffd4e3You've majestically$soft healed yourself".coloured())
 
         // "Soft heal": doesn't feed, remove fire or remove potion effects.
