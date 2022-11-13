@@ -1,9 +1,8 @@
 package me.aroze.uwucore.listener
 
-import me.aroze.uwucore.UwUCore
-import me.aroze.uwucore.command.KittyCannonCommand
-import me.aroze.uwucore.santa.async
 import me.aroze.uwucore.santa.delay
+import me.aroze.uwucore.util.isFlagged
+import org.bukkit.Bukkit
 import org.bukkit.EntityEffect
 import org.bukkit.entity.Cat
 import org.bukkit.entity.EntityType
@@ -17,14 +16,11 @@ object PlayerListener : Listener {
 
     @EventHandler
     fun onClick(e: PlayerInteractEvent) {
-        if (e.item == null) return
+        val item = e.player.inventory.itemInMainHand ?: return
         if (e.action == Action.PHYSICAL) return
         if (e.hand == EquipmentSlot.OFF_HAND) return
 
-        val heldItem = e.item!!.itemMeta!!.displayName
-        val kittyGun: String = KittyCannonCommand.kittyCannon.itemMeta!!.displayName
-
-        if (heldItem != kittyGun) return
+        if (!item.isFlagged("kittyAbuser")) return
 
         val cat = e.player.world.spawnEntity(e.player.eyeLocation, EntityType.CAT) as Cat
         cat.velocity = e.player.eyeLocation.direction.multiply(2.5)

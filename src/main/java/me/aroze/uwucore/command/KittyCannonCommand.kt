@@ -1,8 +1,7 @@
 package me.aroze.uwucore.command
 
-import me.aroze.uwucore.UwUCore
 import me.aroze.uwucore.util.coloured
-import org.bukkit.Bukkit
+import me.aroze.uwucore.util.flag
 import org.bukkit.Material
 import org.bukkit.command.Command
 import org.bukkit.command.CommandExecutor
@@ -19,6 +18,7 @@ object KittyCannonCommand : CommandExecutor {
         val kittyCannonMeta: ItemMeta = kittyCannon.itemMeta!!
         kittyCannonMeta.setDisplayName("&#ffa1b5Kitty Abusey 1000".coloured())
         kittyCannon.itemMeta = kittyCannonMeta
+        kittyCannon.flag("kittyAbuser")
     }
 
     override fun onCommand(sender: CommandSender, command: Command, label: String, args: Array<out String>): Boolean {
