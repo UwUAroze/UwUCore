@@ -1,5 +1,6 @@
 package me.aroze.uwucore
 
+import me.aroze.uwucore.command.FeedCommand
 import me.aroze.uwucore.command.GamemodeCommand
 import me.aroze.uwucore.command.HealCommand
 import me.aroze.uwucore.command.KittyCannonCommand
@@ -16,6 +17,7 @@ class UwUCore : JavaPlugin() {
         getCommand("gamemode")?.setExecutor(GamemodeCommand)
         getCommand("heal")?.setExecutor(HealCommand)
         getCommand("kittycannon")?.setExecutor(KittyCannonCommand)
+        getCommand("feed")?.setExecutor(FeedCommand)
 
         server.pluginManager.registerEvents(PlayerListener, this)
     }
