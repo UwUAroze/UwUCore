@@ -1,9 +1,6 @@
 package me.aroze.uwucore
 
-import me.aroze.uwucore.command.FeedCommand
-import me.aroze.uwucore.command.GamemodeCommand
-import me.aroze.uwucore.command.HealCommand
-import me.aroze.uwucore.command.KittyCannonCommand
+import me.aroze.uwucore.command.*
 import me.aroze.uwucore.listener.PlayerListener
 import org.bukkit.plugin.java.JavaPlugin
 
@@ -18,6 +15,7 @@ class UwUCore : JavaPlugin() {
         getCommand("heal")?.setExecutor(HealCommand)
         getCommand("kittycannon")?.setExecutor(KittyCannonCommand)
         getCommand("feed")?.setExecutor(FeedCommand)
+        getCommand("smite")?.setExecutor(SmiteCommand)
 
         server.pluginManager.registerEvents(PlayerListener, this)
     }
