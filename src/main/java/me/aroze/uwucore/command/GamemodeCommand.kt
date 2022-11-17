@@ -1,6 +1,8 @@
 package me.aroze.uwucore.command
 
 import me.aroze.uwucore.util.coloured
+import me.aroze.uwucore.util.isRightless
+import me.aroze.uwucore.util.isStupid
 import org.bukkit.Bukkit
 import org.bukkit.GameMode
 import org.bukkit.command.Command
@@ -11,11 +13,7 @@ import org.bukkit.entity.Player
 object GamemodeCommand : CommandExecutor {
     override fun onCommand(sender: CommandSender, command: Command, label: String, args: Array<out String>): Boolean {
 
-        if (sender !is Player) return false
-        if (!sender.hasPermission("uwucore.gamemode")) {
-            sender.sendMessage("&#ff6e6e⚠ &#ff7f6elol u wish".coloured())
-            return true
-        }
+        if (sender.isRightless("gamemode")) return true
 
         var gamemode : String;
         var player = sender as Player?;
@@ -23,10 +21,7 @@ object GamemodeCommand : CommandExecutor {
 
         if (typedCommand != "gamemode" && typedCommand != "gm") {
             if (args.size == 1) player = Bukkit.getPlayer(args[0])
-            else if (args.size > 1) {
-                sender.sendMessage("&#ff6e6e⚠ &#ff7f6eYou dummy. /$typedCommand OR /$typedCommand <player>. nothing else weirdo".coloured())
-                return true
-            }
+            else if (args.size > 1) return sender.isStupid("You dummy. /$typedCommand OR /$typedCommand <player>. nothing else weirdo")
         }
 
         when (typedCommand) {
@@ -36,25 +31,18 @@ object GamemodeCommand : CommandExecutor {
             "gmsp", "gmspec", "gm3" -> gamemode = "spectator"
 
             else -> {
-                if (args.isEmpty()) { sender.sendMessage("&#ff6e6e⚠ &#ff7f6eYou know how /gamemode needs args? Yeah, add them idiot.".coloured()); return true; }
-                if (args.size > 2) { sender.sendMessage("&#ff6e6e⚠ &#ff7f6ePsst! /gamemode <gamemode> [player]".coloured()); return true; }
+                if (args.isEmpty()) return sender.isStupid("You know how /gamemode needs args? Yeah, add them idiot.")
+                if (args.size > 2) return sender.isStupid("Psst! /gamemode <gamemode> [player]")
 
                 if (args.size == 2) player = Bukkit.getPlayer(args[1])
                 gamemode = args[0].lowercase()
             }
         }
 
-        if (player == null) {
-            sender.sendMessage("&#ff6e6e⚠ &#ff7f6eWe cannot alter the gamemode of an imaginary player ;c".coloured())
-            return true
-        }
+        if (player == null) return sender.isStupid("We cannot alter the gamemode of an imaginary player ;c")
 
         val oldGamemode = player.gameMode
-
-        if (!setGamemode(player, gamemode)) {
-            sender.sendMessage("&#ff6e6e⚠ &#ff7f6eDoes \"$gamemode\" sound like a gamemode? No.".coloured())
-            return true
-        }
+        if (!setGamemode(player, gamemode)) return sender.isStupid("Does \"$gamemode\" sound like a gamemode? No.")
 
         val formattedGamemode = player.gameMode.toString().lowercase()
         val name = player.name
