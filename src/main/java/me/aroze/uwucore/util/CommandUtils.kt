@@ -12,9 +12,9 @@ import org.bukkit.entity.Player
 fun handleTarget(sender: CommandSender, args: Array<out String>) : Player? {
     if (args.isEmpty()) {
         if (sender is Player) return sender as Player
-        sender.sendMessage("&#ff6e6e⚠ &#ff7f6eYou aren't a player! So specify one, silly".coloured()); return null
+        sender.isStupid("You aren't a player! So specify one, silly"); return null
     }
-    if (Bukkit.getPlayer(args[0]) == null) sender.sendMessage("&#ff6e6e⚠ &#ff7f6eThat player doesn't exist, dummy".coloured())
+    if (Bukkit.getPlayer(args[0]) == null) sender.isStupid("That player doesn't exist, dummy")
     return Bukkit.getPlayer(args[0])
 }
 
