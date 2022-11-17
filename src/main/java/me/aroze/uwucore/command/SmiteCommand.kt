@@ -2,7 +2,8 @@ package me.aroze.uwucore.command
 
 import me.aroze.uwucore.util.coloured
 import me.aroze.uwucore.util.handleTarget
-import org.bukkit.Location
+import me.aroze.uwucore.util.isRightless
+import me.aroze.uwucore.util.isStupid
 import org.bukkit.command.Command
 import org.bukkit.command.CommandExecutor
 import org.bukkit.command.CommandSender
@@ -11,20 +12,14 @@ object SmiteCommand : CommandExecutor {
 
     override fun onCommand(sender: CommandSender, command: Command, label: String, args: Array<out String>): Boolean {
 
-        if (!sender.hasPermission("uwucore.smite")) {
-            sender.sendMessage("&#ff6e6e⚠ &#ff7f6elol u wish".coloured())
-            return true
-        }
+        if (sender.isRightless("smite")) return true
 
         val target = handleTarget(sender, args) ?: return true
         var smiteLocation = target.location
 
         if (args.isEmpty()) {
             smiteLocation = target.getTargetBlock(null, 100).location
-            if (smiteLocation.block.isEmpty) {
-                sender.sendMessage("&#ff6e6e⚠ &#ff7f6eWe can't smite the air ;c".coloured())
-                return true
-            }
+            if (smiteLocation.block.isEmpty) return sender.isStupid("We can't smite the air ;c")
             sender.sendMessage("&#ffd4e3boom.".coloured())
         }
 
