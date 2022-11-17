@@ -3,19 +3,17 @@ package me.aroze.uwucore.command
 import me.aroze.uwucore.util.coloured
 import me.aroze.uwucore.util.handleTarget
 import me.aroze.uwucore.util.isHarmful
+import me.aroze.uwucore.util.isRightless
 import org.bukkit.command.Command
 import org.bukkit.command.CommandExecutor
 import org.bukkit.command.CommandSender
 import org.bukkit.entity.Player
 
-object HealCommand : CommandExecutor{
+object HealCommand : CommandExecutor {
 
     override fun onCommand(sender: CommandSender, command: Command, label: String, args: Array<out String>): Boolean {
 
-        if (!sender.hasPermission("uwucore.heal")) {
-            sender.sendMessage("&#ff6e6e⚠ &#ff7f6elol u wish".coloured())
-            return true
-        }
+        if (sender.isRightless("heal")) return true
 
         val player = handleTarget(sender, args) ?: return true
         val soft = if (label.contains("s")) " soft" else ""
