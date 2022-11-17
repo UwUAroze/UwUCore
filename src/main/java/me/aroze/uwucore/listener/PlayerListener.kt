@@ -2,7 +2,6 @@ package me.aroze.uwucore.listener
 
 import me.aroze.uwucore.santa.delay
 import me.aroze.uwucore.util.isFlagged
-import org.bukkit.Bukkit
 import org.bukkit.EntityEffect
 import org.bukkit.entity.Cat
 import org.bukkit.entity.EntityType
