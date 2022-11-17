@@ -19,22 +19,13 @@ fun handleTarget(sender: CommandSender, args: Array<out String>) : Player? {
 }
 
 // Used for incorrect syntaxes/etc; generic error message format.
-
 fun CommandSender.isStupid(message: String) : Boolean {
     this.sendMessage("&#ff6e6e⚠ &#ff7f6e$message".coloured())
     return true
 }
 
-// Permission check with default message
-fun CommandSender.rightlessCheck(permission: String) : Boolean {
-    if (this.hasPermission(permission)) return false
-    this.isStupid("lol u wish")
-    return true
-}
-
-// Permission check with custom message
-fun CommandSender.rightlessCheck(permission: String, message: String) : Boolean {
-    if (this.hasPermission(permission)) return false
-    this.isStupid(message)
-    return true
+// Permission check
+fun CommandSender.rightlessCheck(permission: String, message: String = "lol u wish") : Boolean {
+    if (this.hasPermission("uwucore.$permission")) return false
+    return this.isStupid(message)
 }
