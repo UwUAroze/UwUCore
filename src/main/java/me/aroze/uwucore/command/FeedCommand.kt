@@ -2,6 +2,7 @@ package me.aroze.uwucore.command
 
 import me.aroze.uwucore.util.coloured
 import me.aroze.uwucore.util.handleTarget
+import me.aroze.uwucore.util.isRightless
 import org.bukkit.command.Command
 import org.bukkit.command.CommandExecutor
 import org.bukkit.command.CommandSender
@@ -11,10 +12,7 @@ object FeedCommand : CommandExecutor {
 
     override fun onCommand(sender: CommandSender, command: Command, label: String, args: Array<out String>): Boolean {
 
-        if (!sender.hasPermission("uwucore.feed")) {
-            sender.sendMessage("&#ff6e6e⚠ &#ff7f6elol u wish".coloured())
-            return true
-        }
+        if (sender.isRightless("feed")) return true
 
         val player = handleTarget(sender, args) ?: return true
 
