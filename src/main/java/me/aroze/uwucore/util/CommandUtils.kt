@@ -25,7 +25,8 @@ fun CommandSender.isStupid(message: String) : Boolean {
 }
 
 // Permission check
-fun CommandSender.rightlessCheck(permission: String, message: String = "lol u wish") : Boolean {
+// Should be used like: if (sender.isRightless("smite")) return true
+fun CommandSender.isRightless(permission: String, message: String = "lol u wish") : Boolean {
     if (this.hasPermission("uwucore.$permission")) return false
     return this.isStupid(message)
 }
