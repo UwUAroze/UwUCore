@@ -13,6 +13,8 @@ commands:
     aliases: [ sheal, softheal]
   kittycannon:
     aliases: [ kittygun ]
+  ping:
+    aliases: [ ms, latency ]
 
   feed: {}
   smite: {}
