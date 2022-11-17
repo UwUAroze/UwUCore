@@ -9,12 +9,12 @@ import org.bukkit.entity.Player
 // - Sender can't be console with no args
 // - Target must be online
 
-fun handleTarget(sender: CommandSender, args: Array<out String>) : Player? {
+fun handleTarget(sender: CommandSender, args: Array<out String>, offlinePlayerError: String = "That player doesn't exist, dummy") : Player? {
     if (args.isEmpty()) {
         if (sender is Player) return sender as Player
         sender.isStupid("You aren't a player! So specify one, silly"); return null
     }
-    if (Bukkit.getPlayer(args[0]) == null) sender.isStupid("That player doesn't exist, dummy")
+    if (Bukkit.getPlayer(args[0]) == null) sender.isStupid(offlinePlayerError)
     return Bukkit.getPlayer(args[0])
 }
 
