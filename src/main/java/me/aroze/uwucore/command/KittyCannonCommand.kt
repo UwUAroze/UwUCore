@@ -2,6 +2,8 @@ package me.aroze.uwucore.command
 
 import me.aroze.uwucore.util.coloured
 import me.aroze.uwucore.util.flag
+import me.aroze.uwucore.util.isRightless
+import me.aroze.uwucore.util.isStupid
 import org.bukkit.Material
 import org.bukkit.command.Command
 import org.bukkit.command.CommandExecutor
@@ -23,15 +25,8 @@ object KittyCannonCommand : CommandExecutor {
 
     override fun onCommand(sender: CommandSender, command: Command, label: String, args: Array<out String>): Boolean {
 
-        if (!sender.hasPermission("uwucore.kitty")) {
-            sender.sendMessage("&#ff6e6e⚠ &#ff7f6eNo kitty for you!".coloured())
-            return true
-        }
-
-        if (sender !is Player) {
-            sender.sendMessage("&#ff6e6e⚠ &#ff7f6eYou aren't a player, go away ;c".coloured())
-            return true
-        }
+        if (sender.isRightless("kitty", "No kitty for you!")) return true
+        if (sender !is Player) sender.isStupid("You aren't a player, go away ;c")
 
         val player = sender as Player
         player.inventory.addItem(kittyCannon)
