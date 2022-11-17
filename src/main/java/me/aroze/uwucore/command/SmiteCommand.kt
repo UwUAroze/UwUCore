@@ -21,6 +21,10 @@ object SmiteCommand : CommandExecutor {
 
         if (args.isEmpty()) {
             smiteLocation = target.getTargetBlock(null, 100).location
+            if (smiteLocation.block.isEmpty) {
+                sender.sendMessage("&#ff6e6e⚠ &#ff7f6eWe can't smite the air ;c".coloured())
+                return true
+            }
             sender.sendMessage("&#ffd4e3boom.".coloured())
         }
 
