@@ -17,3 +17,8 @@ fun handleTarget(sender: CommandSender, args: Array<out String>) : Player? {
     if (Bukkit.getPlayer(args[0]) == null) sender.sendMessage("&#ff6e6e⚠ &#ff7f6eThat player doesn't exist, dummy".coloured())
     return Bukkit.getPlayer(args[0])
 }
+
+fun CommandSender.isStupid(message: String) : Boolean {
+    this.sendMessage("&#ff6e6e⚠ &#ff7f6e$message".coloured())
+    return true
+}
