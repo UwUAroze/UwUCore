@@ -17,8 +17,10 @@ object WalkSpeedCommand : CommandExecutor {
 
         var player : Player? = null
         var speed = 1.0F
+        val typedCommand = label.lowercase().removePrefix("uwucore:")
 
         if (sender !is Player && args.size <= 1) return sender.isStupid("You aren't a player, so specify one, along with a speed.")
+        if (args.isEmpty()) return sender.isStupid("/${typedCommand} <speed> [player]")
 
         if (args.size == 1) {
             try { speed = args[0].toFloat() }
@@ -29,7 +31,7 @@ object WalkSpeedCommand : CommandExecutor {
         if (args.size == 2) {
             if (sender.isRightless("walkspeed.others")) return true
             try { speed = args[0].toFloat() }
-            catch (e: NumberFormatException) { return sender.isStupid("/ws <speed> [player]") }
+            catch (e: NumberFormatException) { return sender.isStupid("/${typedCommand} <speed> [player]") }
             player = Bukkit.getPlayer(args[1])
         }
 
