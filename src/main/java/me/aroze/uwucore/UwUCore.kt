@@ -18,6 +18,7 @@ class UwUCore : JavaPlugin() {
         getCommand("smite")?.setExecutor(SmiteCommand)
         getCommand("ping")?.setExecutor(PingCommand)
         getCommand("flyspeed")?.setExecutor(FlySpeedCommand)
+        getCommand("walkspeed")?.setExecutor(WalkSpeedCommand)
 
         server.pluginManager.registerEvents(PlayerListener, this)
     }

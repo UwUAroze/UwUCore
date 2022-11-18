@@ -17,6 +17,8 @@ commands:
     aliases: [ ms, latency ]
   flyspeed:
     aliases: [ fs, flightspeed ]
+  walkspeed:
+    aliases: [ ws, walkspeed ]
 
   feed: {}
   smite: {}
