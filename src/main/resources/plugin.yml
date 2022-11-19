@@ -19,6 +19,8 @@ commands:
     aliases: [ fs, flightspeed ]
   walkspeed:
     aliases: [ ws, walkspeed ]
+  uwuchat:
+    aliases: [ toggleuwuchat ]
 
   feed: {}
   smite: {}

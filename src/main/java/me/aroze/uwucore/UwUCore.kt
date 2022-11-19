@@ -1,6 +1,7 @@
 package me.aroze.uwucore
 
 import me.aroze.uwucore.command.*
+import me.aroze.uwucore.listener.ChatListener
 import me.aroze.uwucore.listener.PlayerListener
 import org.bukkit.plugin.java.JavaPlugin
 
@@ -19,8 +20,10 @@ class UwUCore : JavaPlugin() {
         getCommand("ping")?.setExecutor(PingCommand)
         getCommand("flyspeed")?.setExecutor(FlySpeedCommand)
         getCommand("walkspeed")?.setExecutor(WalkSpeedCommand)
+        getCommand("uwuchat")?.setExecutor(UwUChatCommand)
 
         server.pluginManager.registerEvents(PlayerListener, this)
+        server.pluginManager.registerEvents(ChatListener, this)
     }
 
     override fun onDisable() {
