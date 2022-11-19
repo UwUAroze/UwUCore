@@ -21,3 +21,7 @@ fun String.coloured(): String {
 fun String.undress(): String {
     return ChatColor.stripColor(this)
 }
+
+fun String.replaceCaseInsensitive(text: String, replacement: String): String {
+    return this.replace(Regex("(?i)$text"), replacement)
+}
