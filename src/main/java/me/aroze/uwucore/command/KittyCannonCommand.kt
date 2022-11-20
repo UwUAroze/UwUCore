@@ -1,5 +1,6 @@
 package me.aroze.uwucore.command
 
+import me.aroze.uwucore.util.coloured
 import me.aroze.uwucore.util.flag
 import me.aroze.uwucore.util.isRightless
 import me.aroze.uwucore.util.isStupid
@@ -17,7 +18,7 @@ object KittyCannonCommand : CommandExecutor {
 
     init {
         val kittyCannonMeta: ItemMeta = kittyCannon.itemMeta!!
-        kittyCannonMeta.setDisplayName("&#ffa1b5Kitty Abusey 1000")
+        kittyCannonMeta.setDisplayName("&#ffa1b5Kitty Abusey 1000".coloured())
         kittyCannon.itemMeta = kittyCannonMeta
         kittyCannon.flag("kittyAbuser")
     }
