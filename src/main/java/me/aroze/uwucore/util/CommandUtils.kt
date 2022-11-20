@@ -20,7 +20,7 @@ fun handleTarget(sender: CommandSender, args: Array<out String>, offlinePlayerEr
 
 // Used for incorrect syntaxes/etc; generic error message format.
 fun CommandSender.isStupid(message: String) : Boolean {
-    this.sendMessage("&#ff6e6e⚠ &#ff7f6e$message".coloured())
+    this.sendColoured("&#ff6e6e⚠ &#ff7f6e$message")
     return true
 }
 

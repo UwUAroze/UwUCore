@@ -1,8 +1,8 @@
 package me.aroze.uwucore.command
 
-import me.aroze.uwucore.util.coloured
 import me.aroze.uwucore.util.isRightless
 import me.aroze.uwucore.util.isStupid
+import me.aroze.uwucore.util.sendColoured
 import org.bukkit.Bukkit
 import org.bukkit.GameMode
 import org.bukkit.command.Command
@@ -48,20 +48,20 @@ object GamemodeCommand : CommandExecutor {
         val name = player.name
 
         if (oldGamemode == player.gameMode) {
-            if (player == sender) sender.sendMessage("&#ffd4e3Your gamemode is already set to &#ffb5cf$formattedGamemode&#ffd4e3, silly".coloured())
-            else sender.sendMessage("&#ffd4e3$name's gamemode is already set to &#ffb5cf$formattedGamemode&#ffd4e3, silly".coloured())
+            if (player == sender) sender.sendColoured("&#ffd4e3Your gamemode is already set to &#ffb5cf$formattedGamemode&#ffd4e3, silly")
+            else sender.sendColoured("&#ffd4e3$name's gamemode is already set to &#ffb5cf$formattedGamemode&#ffd4e3, silly")
             return true
         }
 
-        player.sendMessage("&#ffd4e3Your gamemode has been set to &#ffb5cf$formattedGamemode".coloured())
-        if (player != sender) sender.sendMessage("&#ffd4e3You have set &#ffb5cf$name&#ffd4e3's gamemode to &#ffb5cf$formattedGamemode".coloured())
+        player.sendColoured("&#ffd4e3Your gamemode has been set to &#ffb5cf$formattedGamemode")
+        if (player != sender) sender.sendColoured("&#ffd4e3You have set &#ffb5cf$name&#ffd4e3's gamemode to &#ffb5cf$formattedGamemode")
 
         return true
 
     }
 
     @Suppress("DEPRECATION")
-    fun setGamemode(player: Player, query: String) : Boolean {
+    private fun setGamemode(player: Player, query: String) : Boolean {
         val gamemode : GameMode = if (query.toIntOrNull() != null) GameMode.getByValue(query.toInt())
         else {
             GameMode.values().find {

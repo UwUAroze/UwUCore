@@ -1,8 +1,8 @@
 package me.aroze.uwucore.command
 
-import me.aroze.uwucore.util.coloured
 import me.aroze.uwucore.util.handleTarget
 import me.aroze.uwucore.util.isRightless
+import me.aroze.uwucore.util.sendColoured
 import org.bukkit.command.Command
 import org.bukkit.command.CommandExecutor
 import org.bukkit.command.CommandSender
@@ -16,8 +16,8 @@ object WhooshCommand : CommandExecutor {
 
         target.velocity = target.velocity.add(target.location.direction).setY(0.7).multiply(2.5)
 
-        if (sender != target) sender.sendMessage("&#ffd4e3☁ You've whooshed &#ffb5cf${target.name} &#ffd4e3☁".coloured())
-        target.sendMessage("&#ffd4e3Whoosh... ☁".coloured())
+        if (sender != target) sender.sendColoured("&#ffd4e3☁ You've whooshed &#ffb5cf${target.name} &#ffd4e3☁")
+        target.sendColoured("&#ffd4e3Whoosh... ☁")
 
         return true
     }

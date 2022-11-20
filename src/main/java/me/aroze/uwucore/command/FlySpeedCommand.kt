@@ -1,8 +1,8 @@
 package me.aroze.uwucore.command
 
-import me.aroze.uwucore.util.coloured
 import me.aroze.uwucore.util.isRightless
 import me.aroze.uwucore.util.isStupid
+import me.aroze.uwucore.util.sendColoured
 import org.bukkit.Bukkit
 import org.bukkit.command.Command
 import org.bukkit.command.CommandExecutor
@@ -40,8 +40,8 @@ object FlySpeedCommand : CommandExecutor {
         if (speed < -10 || speed > 10) return sender.isStupid("Flight speed must be a multiplier value between -10 and 10");
 
         player.flySpeed = speed/10
-        player.sendMessage("&#ffd4e3Your flight speed has been set to &#ffb5cf${speed}x".coloured())
-        if (player != sender) sender.sendMessage("&#ffd4e3You've set ${player.name}'s flight speed to &#ffb5cf${speed}x".coloured())
+        player.sendColoured("&#ffd4e3Your flight speed has been set to &#ffb5cf${speed}x")
+        if (player != sender) sender.sendColoured("&#ffd4e3You've set ${player.name}'s flight speed to &#ffb5cf${speed}x")
 
         return true;
 

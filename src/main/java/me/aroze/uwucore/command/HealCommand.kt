@@ -1,9 +1,9 @@
 package me.aroze.uwucore.command
 
-import me.aroze.uwucore.util.coloured
 import me.aroze.uwucore.util.handleTarget
 import me.aroze.uwucore.util.isHarmful
 import me.aroze.uwucore.util.isRightless
+import me.aroze.uwucore.util.sendColoured
 import org.bukkit.command.Command
 import org.bukkit.command.CommandExecutor
 import org.bukkit.command.CommandSender
@@ -20,9 +20,9 @@ object HealCommand : CommandExecutor {
 
         if (player !== sender) {
             val healer = if (sender is Player) sender.name else "console"
-            sender.sendMessage("&#ffd4e3You've$soft healed &#eb9bb7${player.name}&#ffd4e3, aww.".coloured())
-            player.sendMessage("&#ffd4e3You've been$soft healed by &#eb9bb7${healer}&#ffd4e3, how cute ;3".coloured())
-        } else player.sendMessage("&#ffd4e3You've majestically$soft healed yourself".coloured())
+            sender.sendColoured("&#ffd4e3You've$soft healed &#eb9bb7${player.name}&#ffd4e3, aww.")
+            player.sendColoured("&#ffd4e3You've been$soft healed by &#eb9bb7${healer}&#ffd4e3, how cute ;3")
+        } else player.sendColoured("&#ffd4e3You've majestically$soft healed yourself")
 
         // "Soft heal": doesn't feed, remove fire or remove potion effects.
         player.health = 20.0

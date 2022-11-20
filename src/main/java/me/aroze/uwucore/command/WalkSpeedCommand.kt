@@ -1,8 +1,8 @@
 package me.aroze.uwucore.command
 
-import me.aroze.uwucore.util.coloured
 import me.aroze.uwucore.util.isRightless
 import me.aroze.uwucore.util.isStupid
+import me.aroze.uwucore.util.sendColoured
 import org.bukkit.Bukkit
 import org.bukkit.command.Command
 import org.bukkit.command.CommandExecutor
@@ -40,8 +40,8 @@ object WalkSpeedCommand : CommandExecutor {
         if (speed < 0 || speed > 5) return sender.isStupid("Walk speed must be a multiplier value between 0 and 5");
 
         player.walkSpeed = (speed/5)
-        player.sendMessage("&#ffd4e3Your walk speed has been set to &#ffb5cf${speed}x".coloured())
-        if (player != sender) sender.sendMessage("&#ffd4e3You've set ${player.name}'s walk speed to &#ffb5cf${speed}x".coloured())
+        player.sendColoured("&#ffd4e3Your walk speed has been set to &#ffb5cf${speed}x")
+        if (player != sender) sender.sendColoured("&#ffd4e3You've set ${player.name}'s walk speed to &#ffb5cf${speed}x")
 
         return true;
 

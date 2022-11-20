@@ -1,6 +1,5 @@
 package me.aroze.uwucore.command
 
-import me.aroze.uwucore.util.coloured
 import me.aroze.uwucore.util.flag
 import me.aroze.uwucore.util.isRightless
 import me.aroze.uwucore.util.isStupid
@@ -14,11 +13,11 @@ import org.bukkit.inventory.meta.ItemMeta
 
 object KittyCannonCommand : CommandExecutor {
 
-    val kittyCannon = ItemStack(Material.END_ROD)
+    private val kittyCannon = ItemStack(Material.END_ROD)
 
     init {
         val kittyCannonMeta: ItemMeta = kittyCannon.itemMeta!!
-        kittyCannonMeta.setDisplayName("&#ffa1b5Kitty Abusey 1000".coloured())
+        kittyCannonMeta.setDisplayName("&#ffa1b5Kitty Abusey 1000")
         kittyCannon.itemMeta = kittyCannonMeta
         kittyCannon.flag("kittyAbuser")
     }

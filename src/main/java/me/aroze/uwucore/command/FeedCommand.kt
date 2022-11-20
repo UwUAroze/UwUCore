@@ -1,8 +1,8 @@
 package me.aroze.uwucore.command
 
-import me.aroze.uwucore.util.coloured
 import me.aroze.uwucore.util.handleTarget
 import me.aroze.uwucore.util.isRightless
+import me.aroze.uwucore.util.sendColoured
 import org.bukkit.command.Command
 import org.bukkit.command.CommandExecutor
 import org.bukkit.command.CommandSender
@@ -18,9 +18,9 @@ object FeedCommand : CommandExecutor {
 
         if (player !== sender) {
             val mommy = if (sender is Player) sender.name else "console"
-            sender.sendMessage("&#ffd4e3You've fed &#eb9bb7${player.name}&#ffd4e3, :flushed:".coloured())
-            player.sendMessage("&#ffd4e3You've been fed by mommy &#eb9bb7${mommy}&#ffd4e3, how cute ;3".coloured())
-        } else player.sendMessage("&#ffd4e3You've majestically fed yourself".coloured())
+            sender.sendColoured("&#ffd4e3You've fed &#eb9bb7${player.name}&#ffd4e3, :flushed:")
+            player.sendColoured("&#ffd4e3You've been fed by mommy &#eb9bb7${mommy}&#ffd4e3, how cute ;3")
+        } else player.sendColoured("&#ffd4e3You've majestically fed yourself")
 
         player.foodLevel = 20
 
