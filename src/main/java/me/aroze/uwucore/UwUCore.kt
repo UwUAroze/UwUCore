@@ -12,6 +12,9 @@ class UwUCore : JavaPlugin() {
     }
 
     override fun onEnable() {
+
+        saveDefaultConfig()
+
         getCommand("gamemode")?.setExecutor(GamemodeCommand)
         getCommand("heal")?.setExecutor(HealCommand)
         getCommand("kittycannon")?.setExecutor(KittyCannonCommand)
