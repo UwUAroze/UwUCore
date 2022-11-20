@@ -30,3 +30,10 @@ fun CommandSender.isRightless(permission: String, message: String = "lol u wish"
     if (this.hasPermission("uwucore.$permission")) return false
     return this.isStupid(message)
 }
+
+// Allows for syntax like 'return sender.sendFinalMessage("done)'
+// Rather than needing 2 lines for it, and sometimes curly brackets and indents and ews
+fun CommandSender.sendFinalMessage(message: String) : Boolean {
+    this.sendMessage(message)
+    return true
+}
