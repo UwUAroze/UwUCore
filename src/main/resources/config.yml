@@ -1,1 +1,6 @@
-# um
+# For now this is just gonna have config features *i* need, because.. fuck you! :D
+
+# Overriding default messages
+messages:
+  permission:
+    fly: "lol u wish"

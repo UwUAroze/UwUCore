@@ -24,6 +24,7 @@ class UwUCore : JavaPlugin() {
         getCommand("flyspeed")?.setExecutor(FlySpeedCommand)
         getCommand("walkspeed")?.setExecutor(WalkSpeedCommand)
         getCommand("uwuchat")?.setExecutor(UwUChatCommand)
+        getCommand("fly")?.setExecutor(FlyCommand)
 
         server.pluginManager.registerEvents(PlayerListener, this)
         server.pluginManager.registerEvents(ChatListener, this)
