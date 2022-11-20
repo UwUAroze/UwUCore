@@ -38,6 +38,11 @@ fun CommandSender.sendFinalMessage(message: String) : Boolean {
     return true
 }
 
+fun CommandSender.sendFinalColoured(message: String) : Boolean {
+    this.sendColoured(message)
+    return true
+}
+
 fun CommandSender.sendColoured(message: String) {
     this.sendMessage(message.coloured())
 }
