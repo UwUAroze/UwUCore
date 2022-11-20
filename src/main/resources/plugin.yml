@@ -21,6 +21,8 @@ commands:
     aliases: [ ws, walkspeed ]
   uwuchat:
     aliases: [ toggleuwuchat ]
+  whoosh:
+    aliases: [ fling, woosh ]
 
   feed: {}
   smite: {}

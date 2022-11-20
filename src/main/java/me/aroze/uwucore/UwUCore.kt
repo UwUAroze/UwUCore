@@ -26,6 +26,7 @@ class UwUCore : JavaPlugin() {
         getCommand("uwuchat")?.setExecutor(UwUChatCommand)
         getCommand("fly")?.setExecutor(FlyCommand)
         getCommand("testmessage")?.setExecutor(TestMessageCommand)
+        getCommand("whoosh")?.setExecutor(WhooshCommand)
 
         server.pluginManager.registerEvents(PlayerListener, this)
         server.pluginManager.registerEvents(ChatListener, this)
