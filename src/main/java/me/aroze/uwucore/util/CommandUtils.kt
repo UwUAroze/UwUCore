@@ -37,3 +37,7 @@ fun CommandSender.sendFinalMessage(message: String) : Boolean {
     this.sendMessage(message)
     return true
 }
+
+fun CommandSender.sendColoured(message: String) {
+    this.sendMessage(message.coloured())
+}
