@@ -41,3 +41,7 @@ fun CommandSender.sendFinalMessage(message: String) : Boolean {
 fun CommandSender.sendColoured(message: String) {
     this.sendMessage(message.coloured())
 }
+
+fun Player.sendColoured(message: String) {
+    this.sendMessage(message.coloured())
+}
