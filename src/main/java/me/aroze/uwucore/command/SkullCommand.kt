@@ -54,12 +54,4 @@ object SkullCommand : CommandExecutor {
 
     }
 
-    private fun fetchSkull(offlinePlayer: OfflinePlayer, getSkull: (ItemStack) -> Unit) {
-            val skull = ItemStack(Material.PLAYER_HEAD)
-            val meta = skull.itemMeta as SkullMeta
-            meta.owningPlayer = offlinePlayer
-            skull.itemMeta = meta
-            getSkull.invoke(skull)
-    }
-
 }
