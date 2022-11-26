@@ -23,6 +23,8 @@ commands:
     aliases: [ toggleuwuchat ]
   whoosh:
     aliases: [ fling, woosh ]
+  craft:
+    aliases: [ workbench ]
 
   feed: {}
   smite: {}
