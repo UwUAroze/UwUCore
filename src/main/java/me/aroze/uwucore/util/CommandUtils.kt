@@ -1,6 +1,8 @@
 package me.aroze.uwucore.util
 
+import me.aroze.uwucore.UwUCore.Companion.getInstance
 import org.bukkit.Bukkit
+import org.bukkit.command.CommandExecutor
 import org.bukkit.command.CommandSender
 import org.bukkit.entity.Player
 
@@ -49,4 +51,8 @@ fun CommandSender.sendColoured(message: String) {
 
 fun Player.sendColoured(message: String) {
     this.sendMessage(message.coloured())
+}
+
+fun CommandExecutor.setCommand(name: String) {
+    getInstance().getCommand(name)!!.setExecutor(this)
 }
