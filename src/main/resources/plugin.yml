@@ -28,3 +28,4 @@ commands:
   smite: {}
   fly: {}
   testmessage: {}
+  sudo: {}

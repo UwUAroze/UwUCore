@@ -27,6 +27,7 @@ class UwUCore : JavaPlugin() {
         getCommand("fly")!!.setExecutor(FlyCommand)
         getCommand("testmessage")!!.setExecutor(TestMessageCommand)
         getCommand("whoosh")!!.setExecutor(WhooshCommand)
+        getCommand("sudo")!!.setExecutor(SudoCommand)
 
         server.pluginManager.registerEvents(PlayerListener, this)
         server.pluginManager.registerEvents(ChatListener, this)
