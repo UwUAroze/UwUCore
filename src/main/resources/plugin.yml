@@ -25,6 +25,8 @@ commands:
     aliases: [ fling, woosh ]
   craft:
     aliases: [ workbench ]
+  skull:
+    aliases: [ head ]
 
   feed: {}
   smite: {}
