@@ -32,12 +32,12 @@ object SkullCommand : CommandExecutor {
 
             sender.sendColoured("&#ffd4e3Fetching skin...")
 
-            val response = Unirest.get("https://api.ashcon.app/mojang/v2/user/${target.name}")
+            val response = Unirest.get("https://api.mojang.com/users/profiles/minecraft/${target.name}")
                 .header("Content-Type", "application/json")
                 .asJson()
                 .body
 
-            if (response.`object`.has("code")) {
+            if (response.`object`.isEmpty || response.`object`.has("error")) {
                 sender.isStupid("That player doesn't exist!")
                 return@async
             }
