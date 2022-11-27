@@ -9,7 +9,6 @@ import org.bukkit.command.Command
 import org.bukkit.command.CommandExecutor
 import org.bukkit.command.CommandSender
 import org.bukkit.entity.Player
-import org.apache.commons.codec.binary.Base64
 
 object SkullCommand : CommandExecutor {
 
@@ -25,9 +24,15 @@ object SkullCommand : CommandExecutor {
 
             if (args.isNotEmpty() && args[0].length > 16) {
 
-                if (args.isNotEmpty() && validateTextureString(args[0], true)) {
-                    player.inventory.addItem(getSkullFromTexture(args[0]))
+                if (validateTextureBase64(args[0], true)) {
+                    player.inventory.addItem(getSkullFromBsae64(args[0]))
                     sender.sendFinalColoured("&#ffd4e3We've generated a &#ffb5cf${typedCommand.lowercase()}&#ffd4e3 from your &#ffb5cftexture string&#ffd4e3, :D")
+                    return@async
+                }
+
+                if (validateTextureURL(args[0])) {
+                    player.inventory.addItem(getSkullFromURL(args[0]))
+                    sender.sendFinalColoured("&#ffd4e3We've generated a &#ffb5cf${typedCommand.lowercase()}&#ffd4e3 from your &#ffb5cftexture link&#ffd4e3, :D")
                     return@async
                 }
 
