@@ -47,8 +47,25 @@ fun validateTextureString(textureString: String, checkTexturesApi: Boolean) : Bo
     val validB64 = (b64.startsWith("{\"textures\":{\"SKIN\":{\"url\":\"http://textures.minecraft.net/texture/")
         && b64.endsWith("\"}}}"))
 
-    return validB64
+    if (!checkTexturesApi) return validB64
     
+    return validateTextureFromApi(b64)
 }
+
+fun validateTextureFromApi(texture: String) : Boolean {
+
+    val strippedTexture = texture
+        .removePrefix("{\"textures\":{\"SKIN\":{\"url\":\"http://textures.minecraft.net/texture/")
+        .removeSuffix("\"}}}")
+
+    val responseCode : Int
+    try {
+        responseCode = Unirest.get("https://textures.minecraft.net/texture/${strippedTexture}")
+            .header("Content-Type", "application/json")
+            .asJson()
+            .status
+    } catch (e: Exception) { return false }
+
+    return responseCode == 200
 
 }
