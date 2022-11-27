@@ -23,6 +23,7 @@ object SkullCommand : CommandExecutor {
     override fun onCommand(sender: CommandSender, command: Command, label: String, args: Array<out String>): Boolean {
 
         if (sender.isRightless("skull")) return true
+        if (sender !is Player) return sender.isStupid("You need to be a player to receive head!")
         val player = sender as Player
 
         if (args.isNotEmpty() && args[0].length > 16) {
