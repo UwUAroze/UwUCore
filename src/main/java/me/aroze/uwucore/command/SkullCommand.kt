@@ -25,9 +25,14 @@ object SkullCommand : CommandExecutor {
         if (sender.isRightless("skull")) return true
         val player = sender as Player
 
+        if (args.isNotEmpty() && args[0].length > 16) {
+            player.inventory.addItem(getSkullFromTexture(args[0]))
+            return sender.sendFinalColoured("&#ffd4e3Generated skull from texture :)")
+        }
+
         async {
 
-            var target : OfflinePlayer = if (args.isEmpty()) player
+            val target : OfflinePlayer = if (args.isEmpty()) player
             else Bukkit.getOfflinePlayer(args[0])
 
             sender.sendColoured("&#ffd4e3Fetching skin...")
