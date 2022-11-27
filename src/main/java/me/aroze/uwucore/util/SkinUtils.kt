@@ -41,11 +41,13 @@ fun getSkullFromTexture(textureString: String) : ItemStack {
 fun validateTextureString(textureString: String, checkTexturesApi: Boolean) : Boolean {
     val b64 : String
 
-    try { b64 = String(Base64.getDecoder().decode(textureString)) }
+    try { b64 = String(Base64.getDecoder().decode(textureString)).replace("\"", "") }
     catch (e: Exception) { return false }
 
-    val validB64 = (b64.startsWith("{\"textures\":{\"SKIN\":{\"url\":\"http://textures.minecraft.net/texture/")
-        && b64.endsWith("\"}}}"))
+    Bukkit.broadcastMessage(b64)
+
+    val validB64 = (b64.startsWith("{textures:{SKIN:{url:http://textures.minecraft.net/texture/")
+        && b64.endsWith("}}}"))
 
     if (!checkTexturesApi) return validB64
     
@@ -55,8 +57,9 @@ fun validateTextureString(textureString: String, checkTexturesApi: Boolean) : Bo
 fun validateTextureFromApi(texture: String) : Boolean {
 
     val strippedTexture = texture
-        .removePrefix("{\"textures\":{\"SKIN\":{\"url\":\"http://textures.minecraft.net/texture/")
-        .removeSuffix("\"}}}")
+        .replace("\"", "")
+        .removePrefix("{textures:{SKIN:{url:http://textures.minecraft.net/texture/")
+        .removeSuffix("}}}")
 
     val responseCode : Int
     try {
