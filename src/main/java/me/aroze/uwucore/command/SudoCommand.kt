@@ -1,7 +1,8 @@
 package me.aroze.uwucore.command
 
-import me.aroze.uwucore.UwUCore.Companion.getInstance
-import me.aroze.uwucore.util.*
+import me.aroze.uwucore.util.isRightless
+import me.aroze.uwucore.util.isStupid
+import me.aroze.uwucore.util.sendFinalColoured
 import org.bukkit.command.Command
 import org.bukkit.command.CommandExecutor
 import org.bukkit.command.CommandSender

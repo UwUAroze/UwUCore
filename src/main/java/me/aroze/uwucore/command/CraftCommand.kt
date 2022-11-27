@@ -1,6 +1,9 @@
 package me.aroze.uwucore.command
 
-import me.aroze.uwucore.util.*
+import me.aroze.uwucore.util.handleTarget
+import me.aroze.uwucore.util.isRightless
+import me.aroze.uwucore.util.sendColoured
+import me.aroze.uwucore.util.sendFinalColoured
 import org.bukkit.command.Command
 import org.bukkit.command.CommandExecutor
 import org.bukkit.command.CommandSender

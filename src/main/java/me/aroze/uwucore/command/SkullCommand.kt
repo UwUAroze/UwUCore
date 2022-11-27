@@ -1,22 +1,14 @@
 package me.aroze.uwucore.command
 
 import kong.unirest.Unirest
-import me.aroze.uwucore.UwUCore.Companion.getInstance
 import me.aroze.uwucore.santa.async
 import me.aroze.uwucore.util.*
 import org.bukkit.Bukkit
-import org.bukkit.Bukkit.getServer
-import org.bukkit.Material
 import org.bukkit.OfflinePlayer
 import org.bukkit.command.Command
 import org.bukkit.command.CommandExecutor
 import org.bukkit.command.CommandSender
-import org.bukkit.entity.Item
 import org.bukkit.entity.Player
-import org.bukkit.inventory.ItemStack
-import org.bukkit.inventory.meta.ItemMeta
-import org.bukkit.inventory.meta.SkullMeta
-import org.bukkit.material.Skull
 
 object SkullCommand : CommandExecutor {
 

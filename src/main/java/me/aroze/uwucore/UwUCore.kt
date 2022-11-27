@@ -4,7 +4,6 @@ import me.aroze.uwucore.command.*
 import me.aroze.uwucore.listener.ChatListener
 import me.aroze.uwucore.listener.PlayerListener
 import me.aroze.uwucore.util.setCommand
-import org.bukkit.command.CommandExecutor
 import org.bukkit.plugin.java.JavaPlugin
 
 class UwUCore : JavaPlugin() {
