@@ -9,6 +9,7 @@ import org.bukkit.command.Command
 import org.bukkit.command.CommandExecutor
 import org.bukkit.command.CommandSender
 import org.bukkit.entity.Player
+import org.apache.commons.codec.binary.Base64
 
 object SkullCommand : CommandExecutor {
 
@@ -18,12 +19,21 @@ object SkullCommand : CommandExecutor {
         if (sender !is Player) return sender.isStupid("You need to be a player to receive head!")
         val player = sender as Player
 
-        if (args.isNotEmpty() && args[0].length > 16) {
-            player.inventory.addItem(getSkullFromTexture(args[0]))
-            return sender.sendFinalColoured("&#ffd4e3Generated skull from texture :)")
-        }
+        val typedCommand = label.removePrefix("uwucore:")
 
         async {
+
+            if (args.isNotEmpty() && args[0].length > 16) {
+
+                if (args.isNotEmpty() && validateTextureString(args[0], true)) {
+                    player.inventory.addItem(getSkullFromTexture(args[0]))
+                    sender.sendFinalColoured("&#ffd4e3We've generated a &#ffb5cf${typedCommand.lowercase()}&#ffd4e3 from your &#ffb5cftexture string&#ffd4e3, :D")
+                    return@async
+                }
+
+                sender.isStupid("That's not a player name, a texture skin or a valid link!")
+                return@async
+            }
 
             val target : OfflinePlayer = if (args.isEmpty()) player
             else Bukkit.getOfflinePlayer(args[0])
