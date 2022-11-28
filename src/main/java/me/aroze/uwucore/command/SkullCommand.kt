@@ -20,6 +20,8 @@ object SkullCommand : CommandExecutor {
 
         val typedCommand = label.removePrefix("uwucore:")
 
+        if (args.size > 1) return sender.isStupid("That's too many args!")
+
         async {
 
             if (args.isNotEmpty() && args[0].length > 16) {
