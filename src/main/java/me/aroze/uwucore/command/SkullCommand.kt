@@ -36,7 +36,7 @@ object SkullCommand : CommandExecutor {
                     return@async
                 }
 
-                sender.isStupid("That's not a player name, a texture skin or a valid link!")
+                sender.isStupid("That's not a player name, a texture string or a valid link!")
                 return@async
             }
 
