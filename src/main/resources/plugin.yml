@@ -33,3 +33,4 @@ commands:
   fly: {}
   testmessage: {}
   sudo: {}
+  repair: {}

@@ -31,6 +31,7 @@ class UwUCore : JavaPlugin() {
         SudoCommand.setCommand("sudo")
         CraftCommand.setCommand("craft")
         SkullCommand.setCommand("skull")
+        RepairCommand.setCommand("repair")
 
         server.pluginManager.registerEvents(PlayerListener, this)
         server.pluginManager.registerEvents(ChatListener, this)
