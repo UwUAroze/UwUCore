@@ -25,3 +25,11 @@ fun String.undress(): String {
 fun String.replaceCaseInsensitive(text: String, replacement: String): String {
     return this.replace(Regex("(?i)$text"), replacement)
 }
+
+fun String.handlePluralChar(amount: Int, plural: String = "s"): String {
+    return if (amount == 1) this else this + plural
+}
+
+fun String.handlePluralWord(amount: Int, plural: String): String {
+    return if (amount == 1) this else plural
+}
