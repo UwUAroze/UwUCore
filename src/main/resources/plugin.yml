@@ -36,3 +36,4 @@ commands:
   repair: {}
   shrug: {}
   tableflip: {}
+  unflip: {}
