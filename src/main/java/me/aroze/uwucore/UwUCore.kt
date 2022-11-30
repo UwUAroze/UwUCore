@@ -32,6 +32,7 @@ class UwUCore : JavaPlugin() {
         CraftCommand.setCommand("craft")
         SkullCommand.setCommand("skull")
         RepairCommand.setCommand("repair")
+        ShrugCommand.setCommand("shrug")
 
         server.pluginManager.registerEvents(PlayerListener, this)
         server.pluginManager.registerEvents(ChatListener, this)
