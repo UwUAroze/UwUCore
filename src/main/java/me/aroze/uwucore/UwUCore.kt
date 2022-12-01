@@ -35,6 +35,7 @@ class UwUCore : JavaPlugin() {
         ShrugCommand.setCommand("shrug")
         TableflipCommand.setCommand("tableflip")
         UnflipCommand.setCommand("unflip")
+        RideCommand.setCommand("ride")
 
         server.pluginManager.registerEvents(PlayerListener, this)
         server.pluginManager.registerEvents(ChatListener, this)
