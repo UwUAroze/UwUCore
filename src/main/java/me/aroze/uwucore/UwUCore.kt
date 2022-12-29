@@ -37,6 +37,7 @@ class UwUCore : JavaPlugin() {
         UnflipCommand.setCommand("unflip")
         RideCommand.setCommand("ride")
         RenameCommand.setCommand("rename")
+        UnRenameCommand.setCommand("unrename")
 
         server.pluginManager.registerEvents(PlayerListener, this)
         server.pluginManager.registerEvents(ChatListener, this)

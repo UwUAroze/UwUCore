@@ -27,6 +27,8 @@ commands:
     aliases: [ workbench ]
   skull:
     aliases: [ head ]
+  unrename:
+    aliases: [ resetitemname ]
 
   feed: {}
   smite: {}
