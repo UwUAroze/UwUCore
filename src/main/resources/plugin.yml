@@ -38,3 +38,4 @@ commands:
   tableflip: {}
   unflip: {}
   ride: {}
+  rename: {}
