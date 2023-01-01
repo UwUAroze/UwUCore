@@ -1,6 +1,6 @@
 package me.aroze.uwucore.util.type
 
-class Color {
+class Colour {
 
     var red: Int = 0
     var green: Int = 0
@@ -8,8 +8,8 @@ class Color {
 
     companion object {
         @JvmStatic
-        fun fromRGB(red: Int, green: Int, blue: Int): Color {
-            return Color().apply {
+        fun fromRGB(red: Int, green: Int, blue: Int): Colour {
+            return Colour().apply {
                 this.red = red
                 this.green = green
                 this.blue = blue
@@ -17,8 +17,8 @@ class Color {
         }
 
         @JvmStatic
-        fun fromHex(hex: String): Color {
-            return Color().apply {
+        fun fromHex(hex: String): Colour {
+            return Colour().apply {
                 this.red = hex.substring(0, 2).toInt(16)
                 this.green = hex.substring(2, 4).toInt(16)
                 this.blue = hex.substring(4, 6).toInt(16)
