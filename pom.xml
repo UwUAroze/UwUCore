@@ -105,6 +105,10 @@
             <id>sonatype</id>
             <url>https://oss.sonatype.org/content/groups/public/</url>
         </repository>
+        <repository>
+            <id>jitpack.io</id>
+            <url>https://jitpack.io</url>
+        </repository>
     </repositories>
 
     <dependencies>
@@ -129,6 +133,11 @@
             <groupId>com.konghq</groupId>
             <artifactId>unirest-java</artifactId>
             <version>3.13.13</version>
+        </dependency>
+        <dependency>
+            <groupId>com.github.SantioMC.SantioUtils</groupId>
+            <artifactId>common</artifactId>
+            <version>ceaed73343</version>
         </dependency>
     </dependencies>
 </project>
