@@ -19,7 +19,7 @@ object EnderChestCommand : CommandExecutor {
         val executor = sender as Player
         if (target != sender) {
             if (sender.isRightless("enderchest.others", "You aren't special enough to open other enderchests, ily though <3")) return true
-            executor.sendColoured("&p&oIt's &s${target.name}&p&o's enderchest! I wonder what's inside...")
+            executor.sendColoured("&p&oIt's &s&o${target.name}&p&o's enderchest! I wonder what's inside...")
         } else target.sendColoured("&p&oEnsue enderchest creek...")
 
         executor.openInventory(target.enderChest)
