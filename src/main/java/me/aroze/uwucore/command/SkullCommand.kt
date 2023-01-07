@@ -28,13 +28,13 @@ object SkullCommand : CommandExecutor {
 
                 if (validateTextureBase64(args[0], true)) {
                     player.inventory.addItem(getSkullFromBsae64(args[0]))
-                    sender.sendFinalColoured("&#ffd4e3We've generated a &#ffb5cf${typedCommand.lowercase()}&#ffd4e3 from your &#ffb5cftexture string&#ffd4e3, :D")
+                    sender.sendFinalColoured("&pWe've generated a &s${typedCommand.lowercase()}&p from your &stexture string&p, :D")
                     return@async
                 }
 
                 if (validateTextureURL(args[0])) {
                     player.inventory.addItem(getSkullFromURL(args[0]))
-                    sender.sendFinalColoured("&#ffd4e3We've generated a &#ffb5cf${typedCommand.lowercase()}&#ffd4e3 from your &#ffb5cftexture link&#ffd4e3, :D")
+                    sender.sendFinalColoured("&pWe've generated a &s${typedCommand.lowercase()}&p from your &stexture link&p, :D")
                     return@async
                 }
 
@@ -45,7 +45,7 @@ object SkullCommand : CommandExecutor {
             val target : OfflinePlayer = if (args.isEmpty()) player
             else Bukkit.getOfflinePlayer(args[0])
 
-            sender.sendColoured("&#ffd4e3Fetching skin...")
+            sender.sendColoured("&pFetching skin...")
 
             val response = Unirest.get("https://api.mojang.com/users/profiles/minecraft/${target.name}")
                 .header("Content-Type", "application/json")
@@ -59,8 +59,8 @@ object SkullCommand : CommandExecutor {
 
             fetchSkull(target) {
                 player.inventory.addItem(it)
-                if (sender == target) sender.sendColoured("&#ffd4e3Look, it's your face!")
-                else sender.sendColoured("&#ffd4e3You've received head from &#ffb5cf${target.name}&#ffd4e3... heh.")
+                if (sender == target) sender.sendColoured("&pLook, it's your face!")
+                else sender.sendColoured("&pYou've received head from &s${target.name}&p... heh.")
             }
 
         }

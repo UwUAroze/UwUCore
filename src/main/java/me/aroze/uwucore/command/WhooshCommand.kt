@@ -16,8 +16,8 @@ object WhooshCommand : CommandExecutor {
 
         target.velocity = target.velocity.add(target.location.direction).setY(0.7).multiply(2.5)
 
-        if (sender != target) sender.sendColoured("&#ffd4e3☁ You've whooshed &#ffb5cf${target.name} &#ffd4e3☁")
-        target.sendColoured("&#ffd4e3Whoosh... ☁")
+        if (sender != target) sender.sendColoured("&p☁ You've whooshed &s${target.name} &p☁")
+        target.sendColoured("&pWhoosh... ☁")
 
         return true
     }

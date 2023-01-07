@@ -1,6 +1,8 @@
 package me.aroze.uwucore.command
 
-import me.aroze.uwucore.util.*
+import me.aroze.uwucore.util.isRightless
+import me.aroze.uwucore.util.isStupid
+import me.aroze.uwucore.util.sendFinalColoured
 import org.bukkit.command.Command
 import org.bukkit.command.CommandExecutor
 import org.bukkit.command.CommandSender
@@ -21,7 +23,7 @@ object UnRenameCommand : CommandExecutor {
         meta.setDisplayName("")
         item.itemMeta = meta
 
-        return sender.sendFinalColoured("&#ffd4e3I've un-renamed your item, you're welcome.")
+        return sender.sendFinalColoured("&pI've un-renamed your item, you're welcome.")
 
     }
 

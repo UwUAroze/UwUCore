@@ -40,8 +40,8 @@ object FlySpeedCommand : CommandExecutor {
         if (speed < -10 || speed > 10) return sender.isStupid("Flight speed must be a multiplier value between -10 and 10");
 
         player.flySpeed = speed/10
-        player.sendColoured("&#ffd4e3Your flight speed has been set to &#ffb5cf${speed}x")
-        if (player != sender) sender.sendColoured("&#ffd4e3You've set ${player.name}'s flight speed to &#ffb5cf${speed}x")
+        player.sendColoured("&pYour flight speed has been set to &s${speed}x")
+        if (player != sender) sender.sendColoured("&pYou've set ${player.name}'s flight speed to &s${speed}x")
 
         return true;
 

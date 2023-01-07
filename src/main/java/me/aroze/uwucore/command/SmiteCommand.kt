@@ -20,13 +20,13 @@ object SmiteCommand : CommandExecutor {
         if (args.isEmpty()) {
             smiteLocation = target.getTargetBlock(null, 100).location
             if (smiteLocation.block.isEmpty) return sender.isStupid("We can't smite the air ;c")
-            sender.sendColoured("&#ffd4e3boom.")
+            sender.sendColoured("&pboom.")
         }
 
         if (sender != target) {
-            sender.sendColoured("&#ffd4e3Poor &#eb9bb7${target.name}&#ffd4e3, ;c")
-            target.sendColoured("&#ffd4e3That must have hurt.")
-        } else if (args.isNotEmpty()) sender.sendColoured("&#ffd4e3Self harm &#eb9bb7isn't the answer &#ffd4e3...&mbut i'll let you do it anyways :3")
+            sender.sendColoured("&pPoor &#eb9bb7${target.name}&p, ;c")
+            target.sendColoured("&pThat must have hurt.")
+        } else if (args.isNotEmpty()) sender.sendColoured("&pSelf harm &#eb9bb7isn't the answer &p...&mbut i'll let you do it anyways :3")
 
         smiteLocation.world!!.strikeLightning(smiteLocation)
 

@@ -18,9 +18,9 @@ object FeedCommand : CommandExecutor {
 
         if (player !== sender) {
             val mommy = if (sender is Player) sender.name else "console"
-            sender.sendColoured("&#ffd4e3You've fed &#eb9bb7${player.name}&#ffd4e3, :flushed:")
-            player.sendColoured("&#ffd4e3You've been fed by mommy &#eb9bb7${mommy}&#ffd4e3, how cute ;3")
-        } else player.sendColoured("&#ffd4e3You've majestically fed yourself")
+            sender.sendColoured("&pYou've fed &#eb9bb7${player.name}&p, :flushed:")
+            player.sendColoured("&pYou've been fed by mommy &#eb9bb7${mommy}&p, how cute ;3")
+        } else player.sendColoured("&pYou've majestically fed yourself")
 
         player.foodLevel = 20
 

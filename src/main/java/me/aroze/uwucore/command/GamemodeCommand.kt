@@ -48,13 +48,13 @@ object GamemodeCommand : CommandExecutor {
         val name = player.name
 
         if (oldGamemode == player.gameMode) {
-            if (player == sender) sender.sendColoured("&#ffd4e3Your gamemode is already set to &#ffb5cf$formattedGamemode&#ffd4e3, silly")
-            else sender.sendColoured("&#ffd4e3$name's gamemode is already set to &#ffb5cf$formattedGamemode&#ffd4e3, silly")
+            if (player == sender) sender.sendColoured("&pYour gamemode is already set to &s$formattedGamemode&p, silly")
+            else sender.sendColoured("&p$name's gamemode is already set to &s$formattedGamemode&p, silly")
             return true
         }
 
-        player.sendColoured("&#ffd4e3Your gamemode has been set to &#ffb5cf$formattedGamemode")
-        if (player != sender) sender.sendColoured("&#ffd4e3You have set &#ffb5cf$name&#ffd4e3's gamemode to &#ffb5cf$formattedGamemode")
+        player.sendColoured("&pYour gamemode has been set to &s$formattedGamemode")
+        if (player != sender) sender.sendColoured("&pYou have set &s$name&p's gamemode to &s$formattedGamemode")
 
         return true
 

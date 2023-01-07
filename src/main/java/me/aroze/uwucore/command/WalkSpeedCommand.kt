@@ -40,8 +40,8 @@ object WalkSpeedCommand : CommandExecutor {
         if (speed < 0 || speed > 5) return sender.isStupid("Walk speed must be a multiplier value between 0 and 5");
 
         player.walkSpeed = (speed/5)
-        player.sendColoured("&#ffd4e3Your walk speed has been set to &#ffb5cf${speed}x")
-        if (player != sender) sender.sendColoured("&#ffd4e3You've set ${player.name}'s walk speed to &#ffb5cf${speed}x")
+        player.sendColoured("&pYour walk speed has been set to &s${speed}x")
+        if (player != sender) sender.sendColoured("&pYou've set ${player.name}'s walk speed to &s${speed}x")
 
         return true;
 

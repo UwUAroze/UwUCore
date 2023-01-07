@@ -24,7 +24,7 @@ object RideCommand : CommandExecutor {
 
         target.addPassenger(sender)
 
-        sender.sendColoured("&#ffd4e3You are now riding &#ffb5cf${target.name} &#ffd4e3;)")
+        sender.sendColoured("&pYou are now riding &s${target.name} &p;)")
 
         return true
 

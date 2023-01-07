@@ -19,9 +19,9 @@ object CraftCommand : CommandExecutor {
         target.openWorkbench(null, true)
 
         return if (sender != target) {
-            sender.sendColoured("&#ffd4e3You've opened a crafting table for &#eb9bb7${target.name}&#ffd4e3, awhh")
-            target.sendFinalColoured("&#ffd4e3Some cutie opened a crafting table for you ;3")
-        } else target.sendFinalColoured("&#ffd4e3Lazy ass.")
+            sender.sendColoured("&pYou've opened a crafting table for &#eb9bb7${target.name}&p, awhh")
+            target.sendFinalColoured("&pSome cutie opened a crafting table for you ;3")
+        } else target.sendFinalColoured("&pLazy ass.")
 
     }
 

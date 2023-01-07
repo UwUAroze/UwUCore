@@ -23,8 +23,8 @@ object SudoCommand : CommandExecutor {
 
         target.chat(message)
 
-        return if (message.startsWith("/")) sender.sendFinalColoured("&#ffd4e3We've forcefully made &#eb9bb7${target.name}&#ffd4e3 execute your command, :D")
-        else sender.sendFinalColoured("&#ffd4e3We've forcefully made &#eb9bb7${target.name}&#ffd4e3 type your message, :D")
+        return if (message.startsWith("/")) sender.sendFinalColoured("&pWe've forcefully made &#eb9bb7${target.name}&p execute your command, :D")
+        else sender.sendFinalColoured("&pWe've forcefully made &#eb9bb7${target.name}&p type your message, :D")
 
     }
 

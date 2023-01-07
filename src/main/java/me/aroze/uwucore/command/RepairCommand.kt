@@ -43,10 +43,10 @@ object RepairCommand : CommandExecutor {
                     else sender.isStupid("That player's held item isn't damaged! Did you mean /repair all?")
                 }
                 else {
-                    if (sender == target) sender.sendColoured("&#ffd4e3bing bang... your &#ffb5cfheld item&#ffd4e3 has been repaired <3")
+                    if (sender == target) sender.sendColoured("&pbing bang... your &sheld item&p has been repaired <3")
                     else {
-                        sender.sendColoured("&#ffd4e3You've repaired &#ffb5cf${target.name}'s&#ffd4e3 held item, awh!")
-                        target.sendColoured("&#ffd4e3Some mega cutie &#ffb5cfrepaired&#ffd4e3 your &#ffb5cfheld item&#ffd4e3, say thank you!")
+                        sender.sendColoured("&pYou've repaired &s${target.name}'s&p held item, awh!")
+                        target.sendColoured("&pSome mega cutie &srepaired&p your &sheld item&p, say thank you!")
                     }
                 }
             }
@@ -57,10 +57,10 @@ object RepairCommand : CommandExecutor {
                     return if (sender == target) sender.isStupid("You don't have any damaged items &myou paranoid fuck")
                     else sender.isStupid("That player doesn't have any damaged items!")
                 }
-                if (sender == target) sender.sendColoured("&#ffd4e3bing bang... &#ffb5cf${repairedItems} ${"item".handlePluralChar(repairedItems)}&#ffd4e3 in your inventory ${"has".handlePluralWord(repairedItems, "have")} been repaired <3")
+                if (sender == target) sender.sendColoured("&pbing bang... &s${repairedItems} ${"item".handlePluralChar(repairedItems)}&p in your inventory ${"has".handlePluralWord(repairedItems, "have")} been repaired <3")
                 else {
-                    sender.sendColoured("&#ffd4e3You've repaired all of &#ffb5cf${target.name}'s&#ffd4e3 items, awh!")
-                    target.sendColoured("&#ffd4e3Some cutie &#ffb5cfrepaired&#ffd4e3 &#ffb5cfall items&#ffd4e3 in your inventory, awh!")
+                    sender.sendColoured("&pYou've repaired all of &s${target.name}'s&p items, awh!")
+                    target.sendColoured("&pSome cutie &srepaired&p &sall items&p in your inventory, awh!")
                 }
             }
 
