@@ -29,6 +29,8 @@ commands:
     aliases: [ head ]
   unrename:
     aliases: [ resetitemname ]
+  enderchest:
+    aliases: [ ec, echest ]
 
   feed: {}
   smite: {}
