@@ -15,10 +15,10 @@ enum class ChatColors(val hex: String) {
 
 fun String.coloured(): String {
     var coloured = this
-    var match: Matcher = hexPattern.matcher(coloured
         .replace("&p", ChatColors.PRIMARY.hex)
-        .replace("&s", ChatColors.SECONDARY.hex))
+        .replace("&s", ChatColors.SECONDARY.hex)
 
+    var match: Matcher = hexPattern.matcher(coloured)
     while (match.find()) {
         val color: String = coloured.substring(match.start(), match.end())
         coloured = coloured.replace(color, ChatColor.of(color.substring(1)).toString())
