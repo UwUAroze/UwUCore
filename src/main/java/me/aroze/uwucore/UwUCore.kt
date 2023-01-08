@@ -39,6 +39,7 @@ class UwUCore : JavaPlugin() {
         RenameCommand.setCommand("rename")
         UnRenameCommand.setCommand("unrename")
         EnderChestCommand.setCommand("enderchest")
+        HatCommand.setCommand("hat")
 
         server.pluginManager.registerEvents(PlayerListener, this)
         server.pluginManager.registerEvents(ChatListener, this)
