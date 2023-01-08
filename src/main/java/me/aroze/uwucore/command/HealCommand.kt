@@ -24,12 +24,12 @@ object HealCommand : CommandExecutor {
             player.sendColoured("&pYou've been$soft healed by &#eb9bb7${healer}&p, how cute ;3")
         } else player.sendColoured("&pYou've majestically$soft healed yourself")
 
-        // "Soft heal": doesn't feed, remove fire or remove potion effects.
+        // "Soft healing" only heals; doesn't feed, remove fire or remove potion effects.
         player.health = 20.0
-        player.foodLevel = 20
         if (soft != "") return true
 
         for (potion in player.activePotionEffects.filter { it.isHarmful() }) player.removePotionEffect(potion.type)
+        player.foodLevel = 20
         player.fireTicks = 0
         return true
     }
