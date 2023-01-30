@@ -1,27 +1,26 @@
 package me.aroze.uwucore.command
 
-import me.aroze.uwucore.util.handleTarget
-import me.aroze.uwucore.util.isRightless
-import me.aroze.uwucore.util.sendColoured
-import me.aroze.uwucore.util.sendFinalColoured
-import org.bukkit.command.Command
-import org.bukkit.command.CommandExecutor
+import me.aroze.arozeutils.minecraft.command.CommandInfo
+import me.aroze.arozeutils.minecraft.command.FancyCommand
 import org.bukkit.command.CommandSender
 
-object CraftCommand : CommandExecutor {
+@CommandInfo(
+    description = "Opens a virtual crafting table",
+    permission = "craft",
+    aliases = ["workbench"],
+    permissionMessage = "You aren't allowed to use /craft. Place one down, brokie.",
+)
+object CraftCommand : FancyCommand("craft") {
 
-    override fun onCommand(sender: CommandSender, command: Command, label: String, args: Array<out String>): Boolean {
+    override fun onCommand(sender: CommandSender, label: String, args: Array<out String>) {
 
-        if (sender.isRightless("craft")) return true
-        if (args.isNotEmpty() && sender.isRightless("craft.others", "That crafting table is only for you, sharing isn't allowed!")) return true
-
-        val target = handleTarget(sender, args) ?: return true
+        val target = handleTarget(sender, args, "We can't open the crafting table of an offline player ;c") ?: return
         target.openWorkbench(null, true)
 
-        return if (sender != target) {
-            sender.sendColoured("&pYou've opened a crafting table for &#eb9bb7${target.name}&p, awhh")
-            target.sendFinalColoured("&pSome cutie opened a crafting table for you ;3")
-        } else target.sendFinalColoured("&pLazy ass.")
+        if (sender != target) {
+            sender.sendPrimary("You've opened a crafting table for &s${target.name}&p, awhh")
+            target.sendPrimary("Some cutie opened a crafting table for you ;3")
+        } else target.sendPrimary("Lazy ass")
 
     }
 

@@ -23,8 +23,6 @@ commands:
     aliases: [ toggleuwuchat ]
   whoosh:
     aliases: [ fling, woosh ]
-  craft:
-    aliases: [ workbench ]
   skull:
     aliases: [ head ]
   unrename:
@@ -44,3 +42,5 @@ commands:
   ride: {}
   rename: {}
   hat: {}
+
+  test: {}

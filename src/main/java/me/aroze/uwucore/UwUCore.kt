@@ -1,12 +1,13 @@
 package me.aroze.uwucore
 
+import me.aroze.arozeutils.minecraft.FancyPlugin
 import me.aroze.uwucore.command.*
 import me.aroze.uwucore.listener.ChatListener
 import me.aroze.uwucore.listener.PlayerListener
 import me.aroze.uwucore.util.setCommand
 import org.bukkit.plugin.java.JavaPlugin
 
-class UwUCore : JavaPlugin() {
+class UwUCore : FancyPlugin() {
 
     companion object {
         fun getInstance() : UwUCore { return getPlugin(UwUCore::class.java) }
@@ -29,7 +30,7 @@ class UwUCore : JavaPlugin() {
         TestMessageCommand.setCommand("testmessage")
         WhooshCommand.setCommand("whoosh")
         SudoCommand.setCommand("sudo")
-        CraftCommand.setCommand("craft")
+        CraftCommand
         SkullCommand.setCommand("skull")
         RepairCommand.setCommand("repair")
         ShrugCommand.setCommand("shrug")
@@ -40,6 +41,8 @@ class UwUCore : JavaPlugin() {
         UnRenameCommand.setCommand("unrename")
         EnderChestCommand.setCommand("enderchest")
         HatCommand.setCommand("hat")
+
+        TestCommand
 
         server.pluginManager.registerEvents(PlayerListener, this)
         server.pluginManager.registerEvents(ChatListener, this)
