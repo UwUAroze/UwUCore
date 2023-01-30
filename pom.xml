@@ -142,7 +142,7 @@
         <dependency>
             <groupId>com.github.UwUAroze</groupId>
             <artifactId>ArozeUtils</artifactId>
-            <version>79f322a821</version>
+            <version>4e8786454e</version>
         </dependency>
     </dependencies>
 </project>
